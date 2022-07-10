@@ -1,0 +1,43 @@
+<div class="main__StyledMainCalendar">
+  <div class="form__StyledLeftForm">
+    <div class="container__StyledProfileAndReservesMainContainer">
+      <section id="profile" class="left__StyledProfileLeftSection">
+        <div class="main__StyledProfileMain">
+          <div title="Mi perfil" class="text__StyledTextProfile">
+            <p>Histórico de reservas</p>
+          </div>
+          <div class="form__StyledProfileForm">
+            <div class="form__StyledFormUser">
+
+              <div class="courses-container">
+                <div class="course">
+                  <article *ngFor="let reserve of reserves">
+                    <app-reserve [miReserve]="reserve" (refreshReserves)="actReserves()"></app-reserve>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="right__StyledProfileRightSection">
+        <div id="reserves" class="main__StyledReservesMain">
+          <div title="Mis reservas" class="text__StyledTextReserves">
+            <p>Calendario</p>
+          </div>
+          <div class="cards__StyledReservesCards">
+            <div class="app__StyledReserveApp">
+              <app-ui [reserves]="reserveFiltered" (SelectedDate)="onDateSelected(reserves)"></app-ui>
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+
+    <div></div>
+    <div></div>
+  </div>
+
+</div>

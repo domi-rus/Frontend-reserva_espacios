@@ -1,0 +1,251 @@
+@use 'var.scss';
+
+// .main__StyledMainCalendar {
+//   display: flex;
+//   flex-direction: column;
+// }
+
+// .cards_StyledLeftCards {
+//   border: 1px solid black;
+// }
+
+// .right__StyledRightCard {
+//   border: 1px solid black;
+// }
+
+
+.container__StyledProfileAndReservesMainContainer {
+  width: 100%;
+  height: 87.3vh;
+  display: flex;
+  flex-direction: row;
+  padding-top: 30px;
+  background-image: url(../../../assets/images/office.jpg);
+  background-size: cover;
+}
+
+.left__StyledProfileLeftSection {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+span {
+  color: var.$green;
+}
+
+.main__StyledProfileMain {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.text__StyledTextProfile {
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  padding-bottom: 20px;
+  font-family: var.$font-sans;
+
+  &:hover {
+    color: var.$green;
+  }
+}
+
+label {
+  font-family: var.$font-sans;
+  font-size: var.$fz-xs;
+  color: white;
+  padding: 20px 20px 20px 0px;
+
+}
+
+.form__StyledProfileForm {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(3, 3, 0, 0.5);
+  border-radius: 25px;
+
+  &:hover {
+    // border: 2px solid rgba(217, 221, 2, 0.603);
+    box-shadow: rgba(245, 245, 220, 0.877) 0px 10px 30px -15px;
+    // background: #d9dd0277;
+  }
+
+}
+
+.courses-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  scrollbar-width: thin;
+
+}
+
+.form__StyledFormUser {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 80%;
+  border-radius: 10px;
+  padding-right: 30px;
+}
+
+.course-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.course {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  width: 100%;
+  gap: 10px;
+  height: 240px;
+  position: relative;
+}
+
+.img {
+  width: 150px;
+  height: 150px;
+  border: 1px solid rgba(255, 255, 255, 0.192)
+}
+
+.course h6 {
+  color: white;
+  opacity: 1;
+  margin: 0;
+  text-transform: uppercase;
+  font-family: var.$font-sans
+}
+
+.course h2 {
+  font-family: var.$font-sans;
+  font-size: var.$fz-md;
+  color: white;
+  padding-top: 20px;
+}
+
+.course-preview {
+  background-color: rgba(217, 221, 2, 0.603);
+  color: #fff;
+  padding: 10px 30px 30px 30px;
+  width: 190px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.course-preview a {
+  color: #fff;
+  display: inline-block;
+  font-size: 12px;
+  opacity: 1;
+  text-decoration: none;
+  font-family: var.$font-sans;
+
+  &:hover {
+    color: var.$dark-blue;
+  }
+}
+
+.course-info {
+  padding: 10px 20px 20px 20px;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+}
+
+
+.right__StyledProfileRightSection {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.main__StyledReservesMain {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.text__StyledTextReserves {
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  font-family: var.$font-sans;
+  padding-bottom: 20px;
+
+  &:hover {
+    color: var.$green;
+  }
+}
+
+.checkbox {
+  display: none;
+}
+
+#space0~label::before {
+  display: none;
+}
+
+#space0:checked~label::before {
+  display: inline-block;
+}
+
+
+.cards__StyledReservesCards {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(3, 3, 0, 0.5);
+  border-radius: 25px;
+  overflow: auto;
+  scrollbar-width: thin;
+
+  &:hover {
+    // border: 2px solid rgba(217, 221, 2, 0.603);
+    box-shadow: rgba(245, 245, 220, 0.877) 0px 10px 30px -15px;
+  }
+}
+
+.app__StyledReserveApp {
+  width: 80%;
+  height: 67%;
+  border-radius: 10px;
+  border-radius: 25px;
+}
+
+i {
+
+  font-size: 20px;
+  color: var.$green;
+  transition: all .1s;
+}

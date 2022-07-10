@@ -1,0 +1,50 @@
+<form [formGroup]="formReserveConf" (ngSubmit)="onSubmit()">
+  <div class="container__StyledMainContainer">
+    <section class="left__StyledSpacesLeftSection">
+      <div class="text__StyledText">
+        <p>Selecciona tu <span>espacio</span></p>
+      </div>
+      <div class="grid__StyledGridSpaces">
+        <div class="separador-salareuniones">
+          <div class="text">
+            <p>Sala de reuniones</p>
+            <div class="sala-de-reuniones">
+              <div>
+                <input id="checkbox-0" class="checkbox" value="" formControlName="spaceId" name="spaceId" type="radio">
+                <label for="checkbox-0"><i class="fa-solid fa-handshake"></i></label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="right__StyledFormRightSection">
+      <div class="date__StyledDateForm">
+        <div class="text__StyledText">
+          <p>Elige tus <span>opciones:</span></p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="right">
+          <div class="header">
+            <h4 class="animation a2">*Completa los campos para formalizar la reserva.</h4>
+            <h4 class="animation a2">Recuerda que las reservas se formalizarán para el siguiente día hábil.
+              <br>Selecciona horas en punto.
+            </h4>
+          </div>
+          <div class="form">
+
+            <input type="datetime-local" name="daySelect" class="form-field animation a3" formControlName="startHour">
+            <input type="datetime-local" name="daySelect" class="form-field animation a3" formControlName="endHour">
+
+            <!-- <input type="date" name="daySelect" class="form-field animation a3" formControlName="date"> -->
+
+            <input maxlength="150" type="text" class="form-field animation a3"
+              placeholder="*Descripción de la reserva (max.150)" formControlName="description">
+            <input type="submit" class="resume-button" value="ACEPTAR">
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</form>

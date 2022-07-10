@@ -1,0 +1,79 @@
+@use 'var.scss';
+
+.modal-content {
+  border-radius: 25px;
+  background-color: #020926d8;
+}
+
+.modal-body {
+  scrollbar-color: var.$green var.$dark-blue;
+  scrollbar-width: thin;
+}
+
+.form-control {
+  background-color: rgba(255, 255, 255, 0.315);
+  border-radius: 25px;
+  border: none;
+  color: white;
+  font-family: var.$font-sans;
+  transition: border-color .15s ease-in-out,
+    box-shadow .15s ease-in-out;
+
+  &:focus {
+    box-shadow: 0 0 0 .25rem var.$green;
+  }
+}
+
+.modal___title {
+  color: var.$green;
+  font-size: var.$fz-xxl;
+  margin-bottom: 2px;
+  font-family: var.$font-sans;
+}
+
+label {
+  color: white;
+  font-family: var.$font-sans;
+  padding: 10px;
+
+  &:hover {
+    color: var.$green;
+  }
+}
+
+.editMember___btn {
+  padding: 0.45rem 2rem;
+  background: var.$green;
+  border: 1px solid var.$green;
+  color: white;
+  border-radius: 50px;
+  border: none;
+  font-size: var.$fz-xl;
+  text-decoration: none;
+  font-weight: 500;
+  font-family: var.$font-sans;
+  transition: all .1s ease;
+
+  &:hover,
+  &focus,
+  &:active {
+    outline: currentcolor none medium;
+    background-color: white;
+    color: black;
+  }
+}
+
+.modal-footer {
+  border: none;
+}
+
+.delete {
+  color: rgba(255, 0, 0, 0.233);
+  font-size: var.$fz-xl;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    color: red;
+  }
+}

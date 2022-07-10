@@ -1,0 +1,88 @@
+@use 'var.scss';
+
+
+
+.wrapper-calendar {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  max-height: 100%;
+  background-color: rgba(255, 255, 255, 0.151);
+  border-radius: 25px;
+}
+
+.week__StyledWeekCalendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding: 0;
+  font-family: var.$font-sans;
+}
+
+li {
+  padding: .95rem;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 50px;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: rgba(245, 245, 220, 0.877) 0px 10px 30px -15px;
+  }
+}
+
+h1 {
+  color: var.$green;
+  font-family: var.$font-sans;
+}
+
+h2 {
+  margin-bottom: 4px;
+  padding: 0;
+}
+
+span {
+  color: var.$green;
+  font-size: clamp(var.$fz-xxl, var.$fz-lg, var.$fz-md);
+
+  &:hover {
+    color: var.$dark-blue;
+  }
+}
+
+.first-day {
+  grid-column-start: var(--first-day-start, 0);
+}
+
+// .calendar_day span {}
+
+// .calendar_day span:hover {}
+
+// .calendar_day span:before {}
+
+.day-name {
+  font-size: 12px;
+  margin-bottom: 2px;
+  padding: 4px;
+  text-align: center;
+  color: white;
+}
+
+.calendar__StyledCalendarHeader {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+
+
+  button {
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    color: var.$green;
+    font-size: 40px;
+
+    &:hover {
+      color: var.$dark-blue;
+    }
+  }
+}

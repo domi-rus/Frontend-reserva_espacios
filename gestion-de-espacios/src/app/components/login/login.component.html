@@ -1,0 +1,29 @@
+
+  <div class="container">
+    <div class="left">
+      <div class="brand-img">
+        <a class="none-styled" [routerLink]="['/home']"><img src="./../../../assets/logo/sasass@2x.png" alt=""
+            class="img__Styledimage"></a>
+      </div>
+      <div class="header">
+        <h2 class="animation a1">¡Accede a tu cuenta!</h2>
+        <h4 class="animation a2">Inicia sesión con tu correo electrónico y contraseña.
+        </h4>
+        <!-- <div class="google__StyledIconGoogle">
+          <button (click)="googleOnLogin()" class="linked__StyledLoginButton"><i
+              class="fa-brands fa-google"></i></button>
+        </div> -->
+      </div>
+      <form #loginForm="ngForm" (ngSubmit)="getLoginData(loginForm)">
+        <div class="form">
+          <input type="email" name="email" required="required" class="form-field animation a3" placeholder="E-mail*"
+            ngModel>
+          <input type="password" name="password" required="required" class="form-field animation a4"
+            placeholder="Contraseña*" ngModel>
+          <input type="submit" class="resume-button" value="ACEPTAR">
+        </div>
+      </form>
+    </div>
+    <div class="right"></div>
+  </div>
+

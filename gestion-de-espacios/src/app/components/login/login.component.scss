@@ -1,0 +1,209 @@
+@use 'var.scss';
+
+@font-face {
+  font-family: 'Gelion';
+  src: url('../../../assets/fonts/Gelion/Gelion-Regular.ttf');
+}
+
+.container {
+  display: flex;
+  height: 87.3vh;
+  font-family: 'Gelion';
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  animation-name: left;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-delay: 1s;
+}
+
+.brand-img {
+  cursor: pointer;
+  height: 230px;
+  width: 380px;
+}
+
+.google__StyledIconGoogle {
+  display: flex;
+  justify-content: center;
+}
+
+.linked__StyledLoginButton {
+
+  text-align: center;
+  margin-top: 30px;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+
+
+}
+
+.fa-google {
+  color: var.$green;
+  font-size: 50px;
+}
+
+.img__Styledimage {
+  max-width: 100%;
+}
+
+.right {
+  flex: 1;
+  background-color: black;
+  transition: 1s;
+  background-image: url(../../../assets/images/big-data-technology-for-business-finance-concept-scaled.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.header>h2 {
+  text-align: center;
+  color: var.$green;
+  font-weight: 600;
+}
+
+.header>h4 {
+  margin-top: 20px;
+  font-weight: normal;
+  font-size: 15px;
+  color: rgb(0, 0, 7);
+  text-align: center;
+}
+
+input {
+  background-color: transparent;
+
+  &:hover {
+    background-color: rgba(128, 128, 128, 0.075);
+  }
+}
+
+::placeholder {
+  color: rgba(5, 5, 5, 0.438);
+  font-size: var.$fz-xxs;
+  font-family: 'Gelion';
+}
+
+.form {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form>p {
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.form>p>a {
+  color: rgb(0, 0, 7);
+  font-size: 14px;
+  font-family: 'Gelion';
+
+  &:hover {
+    color: var.$green
+  }
+}
+
+.form-field {
+  height: 46px;
+  padding: 0 16px;
+  border: 0;
+  border-bottom: 1px solid black;
+  font-family: 'Rubik', sans-serif;
+  outline: 0;
+  transition: .2s;
+  margin-top: 20px;
+}
+
+.form-field:focus {
+  border-color: #f6f9fc;
+}
+
+.resume-button {
+  text-align: center;
+  justify-content: center;
+  color: var.$white;
+  border-radius: 25px;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  font-size: var.$fz-md;
+  text-decoration: none;
+  font-family: var.$font-sans;
+  font-weight: 600;
+  background-color: var.$green;
+  align-items: center;
+  margin-top: 20px;
+  border: none;
+
+  &:hover,
+  &focus,
+  &:active {
+    outline: currentcolor none medium;
+    background-color: var.$white;
+    color: var.$green;
+    border: 1px solid var.$green;
+  }
+}
+
+.animation {
+  animation-name: move;
+  animation-duration: .4s;
+  animation-fill-mode: both;
+  animation-delay: 2s;
+}
+
+.a1 {
+  animation-delay: 2s;
+}
+
+.a2 {
+  animation-delay: 2.1s;
+}
+
+.a3 {
+  animation-delay: 2.2s;
+}
+
+.a4 {
+  animation-delay: 2.3s;
+}
+
+.a5 {
+  animation-delay: 2.4s;
+}
+
+@keyframes move {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-40px);
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+@keyframes left {
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+
+  100% {
+    opacity: 1;
+    padding: 20px 40px;
+    width: 440px;
+  }
+}

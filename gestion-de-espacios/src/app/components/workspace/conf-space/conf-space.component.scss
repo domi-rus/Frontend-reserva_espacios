@@ -1,0 +1,274 @@
+@use 'var.scss';
+
+.container__StyledMainContainer {
+  width: 100%;
+  height: 87.3vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 30px;
+  background-image: url(../../../../assets/images/25101.jpg);
+  background-size: cover;
+}
+
+.left__StyledSpacesLeftSection {
+  width: 100%;
+  height: 100%;
+  margin-left: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.grid__StyledGridSpaces {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.text__StyledText {
+  font-size: 30px;
+  color: var.$dark-blue;
+  text-align: center;
+  font-family: var.$font-sans;
+}
+
+p {
+  margin-bottom: 10px;
+  color: var.$dark-blue;
+}
+
+.text {
+  font-size: var.$fz-xs;
+  text-align: center;
+  font-family: var.$font-sans;
+}
+
+span {
+  color: var.$green;
+}
+
+.fa-handshake {
+  color: var.$green;
+  font-size: clamp(8.5rem, 9.5rem, 9.5rem);
+  cursor: pointer;
+}
+
+input:checked+label .fa-handshake {
+  transition: .3s;
+  font-size: 130px;
+  color: var.$dark-blue;
+}
+
+.checkbox {
+  display: none;
+}
+
+.separador-salareuniones {
+  height: 70%;
+}
+
+.right__StyledFormRightSection {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 30px;
+  border-left: 1px solid rgba(0, 0, 0, 0.103);
+  animation-name: move;
+  animation-duration: .4s;
+  animation-fill-mode: both;
+  animation-delay: .6s;
+  transition: .3s;
+}
+
+.header-top>h2 {
+  text-align: center;
+  color: var.$green;
+  font-weight: 600;
+}
+
+.header>h4 {
+  margin-top: 20px;
+  font-weight: normal;
+  font-size: 15px;
+  color: rgb(0, 0, 7);
+  text-align: center;
+  font-family: var.$font-sans;
+}
+
+.header-top>h4 {
+  font-weight: normal;
+  font-size: 15px;
+  color: rgb(0, 0, 7);
+  text-align: center;
+}
+
+::placeholder {
+  color: rgba(5, 5, 5, 0.692);
+  font-size: var.$fz-xxs;
+  font-family: var.$font-sans;
+}
+
+.right {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 375px;
+}
+
+.form>p {
+  text-align: center;
+  padding: 10px;
+  margin-top: 30px;
+  font-family: var.$font-sans;
+}
+
+.form>p>a {
+  color: rgb(0, 0, 7);
+  font-size: 14px;
+  font-family: var.$font-sans;
+
+  &:hover {
+    color: var.$green
+  }
+}
+
+.labels {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  font-family: var.$font-sans;
+}
+
+.form-field {
+  padding: 20px 30px 5px 20px;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.411);
+  outline: 0;
+  transition: .2s;
+  margin-top: 20px;
+  text-align: center;
+  font-family: var.$font-sans;
+  font-size: var.$fz-xs;
+
+}
+
+option {
+  background-color: rgba(253, 253, 250, 0.178);
+  color: var.$green;
+  border-radius: 10px;
+  font-family: var.$font-sans;
+  font-size: 12px;
+}
+
+.resume-button {
+  text-align: center;
+  justify-content: center;
+  color: var.$white;
+  border-radius: 25px;
+  font-size: var.$fz-md;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: var.$font-sans;
+  font-weight: 600;
+  background-color: var.$green;
+  align-items: center;
+  margin-top: 50px;
+  border: none;
+
+  &:hover,
+  &focus,
+  &:active {
+    outline: currentcolor none medium;
+    background-color: var.$white;
+    color: var.$green;
+    border: 1px solid var.$green;
+  }
+}
+
+input {
+  background-color: transparent;
+  ;
+}
+
+button {
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 25px;
+
+  &:focus {
+    background-color: rgba(0, 0, 0, 0.09);
+
+  }
+}
+
+.animation {
+  animation-name: move;
+  animation-duration: .4s;
+  animation-fill-mode: both;
+  animation-delay: 1s;
+}
+
+
+.a1 {
+  animation-delay: 1s;
+}
+
+.a2 {
+  animation-delay: 1.3s;
+}
+
+.a3 {
+  animation-delay: 1.4s;
+}
+
+.a4 {
+  animation-delay: 1.5s;
+}
+
+.a5 {
+  animation-delay: 1.6s;
+}
+
+@keyframes move {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-40px);
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+@keyframes left {
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+
+  100% {
+    opacity: 1;
+    // padding: 20px 40px;
+    width: 0px;
+  }
+}

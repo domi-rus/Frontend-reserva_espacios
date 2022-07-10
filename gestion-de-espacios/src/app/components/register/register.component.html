@@ -1,0 +1,44 @@
+
+  <div class="container">
+    <div class="right">
+      <div class="header">
+        <h2 class="animation a1">¡Bienvenido/a!</h2>
+        <h4 class="animation a2">*Completa los campos para formalizar el registro.</h4>
+      </div>
+      <form [formGroup]="formRegister" (ngSubmit)="getDataForm()">
+        <div class="form">
+          <input type="text" class="form-field animation a3" placeholder="Nombre*" formControlName="name">
+          <input type="text" class="form-field animation a3" placeholder="Apellido*" formControlName="surname">
+          <input type="text" class="form-field animation a3" placeholder="Nombre de usuario*"
+            formControlName="username">
+          <input type="email" class="form-field animation a3" placeholder="E-mail*" formControlName="email">
+          <input type="password" class="form-field animation a3" placeholder="Contraseña*" formControlName="password">
+          <input type="password" class="form-field animation a3" placeholder="Confirma tu contraseña*"
+            formControlName="repeatPassword">
+          <p>Selecciona tu compañía/departamento:</p>
+          <div class="labels">
+            <div>
+              <input id="checkbox-1" type="radio" formControlName="company" value="bravent"
+                class="form-field animation a4 checkbox">
+              <label for="checkbox-1">Bravent</label>
+            </div>
+            <div>
+              <input id="checkbox-2" type="radio" formControlName="company" value="marketing"
+                class="form-field animation a4 checkbox">
+              <label for="checkbox-2">Bravent/Marketing</label>
+            </div>
+            <div>
+              <input id="checkbox-3" type="radio" formControlName="company" value="bitwork"
+                class="form-field animation a4 checkbox">
+              <label for="checkbox-3">Bitwork</label>
+            </div>
+            <!-- <div>
+              <input type="text" formControlName="avatar" value="" class="form-field animation a4 checkbox">
+            </div> -->
+          </div>
+
+          <input type="submit" class="resume-button" value="ACEPTAR">
+        </div>
+      </form>
+    </div>
+  </div>
