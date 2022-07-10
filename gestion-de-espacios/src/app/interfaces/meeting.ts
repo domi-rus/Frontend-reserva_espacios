@@ -1,4 +1,4 @@
-export interface meeting {
+export interface Meeting {
   id: number
   userId: string
   startHour: string

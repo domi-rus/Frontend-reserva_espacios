@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
+import { Meeting } from 'src/app/interfaces/meeting'
 import { Reserve } from 'src/app/interfaces/reserve'
 import { ReservesService } from 'src/app/services/reserves.service'
 
@@ -13,6 +14,8 @@ export class CalendarComponent implements OnInit {
 
   reserves: Reserve[] = []
   reserveFiltered: Reserve[] = []
+  meetings: Meeting[] = []
+  meetingFiltered: Meeting[] = []
 
   constructor(
     private reservesService: ReservesService,
@@ -23,14 +26,25 @@ export class CalendarComponent implements OnInit {
   async ngOnInit(): Promise<void> {
     this.reserves = await this.reservesService.getAllReserves()
     this.reserveFiltered = [...this.reserves]
-    console.log(this.reserves)
+    this.meetings = await this.reservesService.getAllMeetings()
+    this.meetingFiltered = [...this.meetings]
+
+
   }
 
   async onDateSelected($event: any) {
-    this.reserveFiltered = await this.reservesService.filteredReserve($event)
+    this.reserveFiltered = await this.reservesService.getAllReserves()
+    this.meetingFiltered = await this.reservesService.getAllMeetings()
+    this.reserveFiltered = this.reserveFiltered.filter(x => x.date.substring(10, -1) == $event)
+    console.log(this.meetingFiltered)
+    this.meetingFiltered = this.meetingFiltered.filter(x => x.startHour.substring(10, -1) == $event)
   }
 
   async actReserves() {
     this.reserveFiltered = await this.reservesService.getAllReserves()
   }
+  async actMeetings() {
+    this.meetingFiltered = await this.reservesService.getAllMeetings()
+  }
+
 }

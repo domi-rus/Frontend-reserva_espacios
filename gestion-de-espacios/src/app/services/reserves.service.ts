@@ -77,16 +77,6 @@ export class ReservesService {
 
 
 
-
-  filteredReserve(pDate: string): Promise<any[]> {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        "Authorization": `Bearer ${localStorage.getItem('token')!}`,
-      })
-    }
-    return lastValueFrom(this.httpClient.get<any[]>(this.baseUrl + 'Reservation/' + pDate, httpOptions));
-  }
-
   // Actualiza reserva solo los autorizados
 
   updateReserve(pForm: any, pId: number): Observable<any> {
@@ -101,27 +91,28 @@ export class ReservesService {
 
   // Borra reserva solo los autorizados
 
-  deleteReserve(pId: number): Promise<any> {
-    const httpOtions = {
-      headers: new HttpHeaders({
-        'Authorization': localStorage.getItem('token')!
-      })
-    }
-    return lastValueFrom(this.httpClient.delete<any>(`${this.baseUrl}${pId}`, httpOtions))
-  }
-
-  // Coge reservas por usuario
-
-  getReservesByUserId(pId: string): Promise<any[]> {
+  deleteReserve(pId: any): Promise<any> {
     const httpOptions = {
       headers: new HttpHeaders({
-        'Authorization': localStorage.getItem('token')!
+        "Authorization": `Bearer ${localStorage.getItem('token')!}`,
       })
     }
-    const result = lastValueFrom(this.httpClient.get<any[]>(this.baseUrl + 'Reservation/' + pId, httpOptions))
-    console.log(result)
-    return result
+    const res = lastValueFrom(this.httpClient.delete<any>(this.baseUrl + 'Reservation/' + pId, httpOptions))
+    return res
   }
+
+  deleteMeeting(pId: any): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Authorization": `Bearer ${localStorage.getItem('token')!}`,
+      })
+    }
+    const res = lastValueFrom(this.httpClient.delete<any>(this.baseUrl + 'Meeting/' + pId, httpOptions))
+    return res
+  }
+
+
+
 
   // Coge reservas por status
 
@@ -135,11 +126,8 @@ export class ReservesService {
     return lastValueFrom(this.httpClient.get<any[]>(`${this.baseUrl}/space/${pId}`))
   }
 
-  // Coge reservas por fecha
 
-  getReservesByDate(pDate: string): Promise<any[]> {
-    return lastValueFrom(this.httpClient.get<any[]>(`${this.baseUrl}/date/${pDate}`))
-  }
+
 
 }
 

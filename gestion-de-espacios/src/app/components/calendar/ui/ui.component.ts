@@ -14,7 +14,7 @@ export class UiComponent implements OnInit {
 
   // Comunicamos el evento de seleccion de fecha   
 
-  @Output() SelectedDate: EventEmitter<string>
+  @Output() SelectedDate: EventEmitter<any>
 
   // Creamos los días de la semana
 
@@ -114,7 +114,9 @@ export class UiComponent implements OnInit {
 
     if (date !== "") {
       this.SelectedDate.emit(date)
+
     }
+
   }
 
 }

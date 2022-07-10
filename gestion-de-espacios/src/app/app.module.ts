@@ -32,6 +32,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { EditProfileComponent } from './components/profile/edit-profile/edit-profile.component';
 import { ConfSpaceComponent } from './components/workspace/conf-space/conf-space.component';
 import { FilterMembersPipe } from './pipes/filter.members.pipe';
+import { MeetingComponent } from './components/calendar/meeting/meeting.component';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { FilterMembersPipe } from './pipes/filter.members.pipe';
     EditProfileComponent,
     ConfSpaceComponent,
     FilterMembersPipe,
-    FilterMembersPipe
+    FilterMembersPipe,
+    MeetingComponent
 
   ],
   imports: [

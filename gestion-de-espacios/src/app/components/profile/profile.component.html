@@ -57,6 +57,9 @@
             <article *ngFor="let reserve of reserveFiltered">
               <app-reserve [miReserve]="reserve"></app-reserve>
             </article>
+            <article *ngFor="let reserve of meetingFiltered">
+              <app-meeting [miMeeting]="reserve"></app-meeting>
+            </article>
           </div>
           <p></p>
         </div>
