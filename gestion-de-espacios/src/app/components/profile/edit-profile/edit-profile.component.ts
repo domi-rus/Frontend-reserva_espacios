@@ -22,7 +22,7 @@ export class EditProfileComponent implements OnInit {
     this.updateUserForm = new FormGroup({
       name: new FormControl('', []),
       surname: new FormControl('', []),
-      username: new FormControl('', []),
+      userName: new FormControl('', []),
       email: new FormControl('', [Validators.email]),
     }, [])
 
@@ -30,32 +30,20 @@ export class EditProfileComponent implements OnInit {
 
   async ngOnInit() {
 
-    let userId = this.myUser.id
-    const updateProfile = await this.userService.getById(userId)
-    this.updateUserForm = new FormGroup({
-      name: new FormControl('updateProfile?.name', []),
-      surname: new FormControl('updateProfile?.surname', []),
-      username: new FormControl('updateProfile?.username', []),
-      email: new FormControl('updateProfile?.email', [Validators.email]),
-    })
+
+
   }
   async editUser() {
-    let formData = new FormData()
-    formData.append('name', this.updateUserForm.value.name)
-    formData.append('surname', this.updateUserForm.value.surname)
-    formData.append('username', this.updateUserForm.value.username)
-    formData.append('email', this.updateUserForm.value.email)
-    formData.append('avatar', this.myUser.avatar, this.avatar[0])
 
-    if (this.avatar === null) {
+    let userId = this.myUser.id
 
-      const response = await this.userService.editUser(formData, this.updateUserForm.value.id)
-      this.updateUser.emit(true)
-      if (response[0].affectedRows) {
-        alert('El usuario ha sido actualizado')
-      } else {
-        alert('El usuario no ha sido actualizado')
-      }
+    const response = await this.userService.editUser(this.updateUserForm.value, userId)
+    this.updateUser.emit(true)
+    if (response[0].affectedRows) {
+      alert('El usuario ha sido actualizado')
+    } else {
+      alert('El usuario no ha sido actualizado')
+
     }
   }
 

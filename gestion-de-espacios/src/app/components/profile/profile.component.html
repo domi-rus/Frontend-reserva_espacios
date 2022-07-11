@@ -22,7 +22,8 @@
                 </div>
                 <h2><span>Nombre:</span> {{ user.name }} {{ user.surname }}</h2>
                 <h2><span>Email:</span> {{ user.email }}</h2>
-                <h2><span>Compañía:</span> {{ user.company }}</h2>
+                <h2><span>Username:</span> {{ user.userName }}</h2>
+
 
                 <!-- Editar contraseña -->
 
@@ -34,7 +35,7 @@
 
                 <button type="button" title="Editar perfil" class="profile___btn btn my-2" data-bs-toggle="modal"
                   data-bs-target="#editProfile"><i class="fa-solid fa-user-pen"></i></button>
-                <app-edit-profile></app-edit-profile>
+                <app-edit-profile [myUser]="user"></app-edit-profile>
               </div>
             </div>
           </div>

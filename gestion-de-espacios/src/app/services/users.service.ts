@@ -79,13 +79,15 @@ export class UsersService {
 
   // Editar usuario solo los autorizados
 
-  editUser(pForm: FormData, pId: number): Promise<any> {
+  editUser(pForm: FormData, pId: string): Promise<any> {
     const httpOptions = {
       headers: new HttpHeaders({
-        'Authorization': localStorage.getItem('token')!
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${localStorage.getItem('token')!}`,
       })
     }
-    return lastValueFrom(this.httpClient.put<any>(this.baseUrl + 'profile/update', pForm, httpOptions))
+    console.log(pId)
+    return lastValueFrom(this.httpClient.put<any>(this.baseUrl + 'Edit/' + pId, pForm, httpOptions))
   }
 
   // Borrar usuario solo los autorizados
