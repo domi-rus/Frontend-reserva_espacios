@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/interfaces/user';
 import { UsersService } from 'src/app/services/users.service';
 
@@ -16,7 +16,7 @@ export class EditProfileComponent implements OnInit {
   @Input() myUser: User | any
   updateUserForm: FormGroup
 
-  constructor(private userService: UsersService, private router: Router) {
+  constructor(private userService: UsersService, private router: Router, private activatedRoute: ActivatedRoute) {
     this.updateUser = new EventEmitter<boolean>()
 
     this.updateUserForm = new FormGroup({
@@ -39,6 +39,7 @@ export class EditProfileComponent implements OnInit {
 
     const response = await this.userService.editUser(this.updateUserForm.value, userId)
     this.updateUser.emit(true)
+    window.location.reload();
     if (response[0].affectedRows) {
       alert('El usuario ha sido actualizado')
     } else {
@@ -47,14 +48,18 @@ export class EditProfileComponent implements OnInit {
     }
   }
 
+
   onChange($event: any) {
     this.avatar = $event.target.avatar;
   }
 
-  async deleteUser(pId: number) {
+  async deleteUser(pId: string) {
+    let userId = this.myUser.id
     const alert = confirm('¿Estas seguro que quieres eliminar tu perfil?')
     if (alert) {
-      const response = await this.userService.deleteUser(pId);
+
+      const response = await this.userService.deleteUser(userId);
+      localStorage.removeItem('token')
       this.router.navigate(['/home']);
       this.updateUser.emit(true);
     }

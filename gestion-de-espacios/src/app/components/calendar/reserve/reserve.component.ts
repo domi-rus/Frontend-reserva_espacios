@@ -14,17 +14,18 @@ export class ReserveComponent implements OnInit {
 
   @Input() miReserve: Reserve | any
 
-  isUser = true
-
   reserved: Reserve[] | any
   reserveFiltered: Reserve[] = []
 
   constructor(private reservesService: ReservesService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   async ngOnInit(): Promise<void> {
-    this.isUser
+
     this.reserved = await this.reservesService.getAllReserves()
     this.reserveFiltered = [...this.reserved]
+
+
+
   }
 
   async onDelete(pId: number) {

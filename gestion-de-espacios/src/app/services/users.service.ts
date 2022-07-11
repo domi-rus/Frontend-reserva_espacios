@@ -57,14 +57,6 @@ export class UsersService {
 
   }
 
-
-
-  // Encontrar usuarios por id 
-
-
-  // Traigo todos los usuarios
-
-
   // Resetear contraseña solo autorizados
 
   resetPassword(pForm: any, pId: number): Observable<any> {
@@ -92,14 +84,14 @@ export class UsersService {
 
   // Borrar usuario solo los autorizados
 
-  deleteUser(pId: number): Observable<any> {
+  deleteUser(pId: string): Promise<any> {
     const httpOptions = {
       headers: new HttpHeaders({
-        'Authorization': localStorage.getItem('token')!
+        "Authorization": `Bearer ${localStorage.getItem('token')!}`,
       })
     }
-    const res = this.httpClient.delete<any>(this.baseUrl + 'profile/' + pId, httpOptions)
-    return res
+    return lastValueFrom(this.httpClient.delete<any>(this.baseUrl + 'Delete/' + pId, httpOptions))
+
   }
 }
 
