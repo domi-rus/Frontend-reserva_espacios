@@ -19,12 +19,16 @@ export class PasswordComponent implements OnInit {
 
     this.editPassword = new FormGroup({
 
+      email: new FormControl('', [
+        Validators.required
+      ]),
+
       password: new FormControl('', [
         Validators.required,
         Validators.minLength(8),
         Validators.maxLength(20)
       ]),
-      repeatPass: new FormControl('', [
+      confirmPassword: new FormControl('', [
         Validators.required
       ]),
     }, [this.samePass])
@@ -35,7 +39,7 @@ export class PasswordComponent implements OnInit {
 
   samePass(form: AbstractControl) {
     const passValue = form.get('password')?.value;
-    const samePassValue = form.get('repeatPass')?.value
+    const samePassValue = form.get('confirmPassword')?.value
 
     if (passValue === samePassValue) {
       return null
@@ -70,30 +74,20 @@ export class PasswordComponent implements OnInit {
   // Edit password of the user logged in the system 
 
   editMyPass() {
-    this.activateRoute.params.subscribe(params => {
 
-      if (params['idprofile']) {
+    this.userServices.resetPassword(this.editPassword.value).subscribe(async res => {
 
-        const id = parseInt(params['idprofile']);
-        this.userServices.resetPassword(this.editPassword.value, id).subscribe(response => {
-          console.log(response);
-          if (response[0].changedRows) {
-            alert('Tu contraseña ha sido actualizada correctamente')
-          } else {
-            alert('La contraseña no ha podido ser actualizada')
-          }
-        })
+      if (res.id) {
+
+
       } else {
-        const id = this.myProfile.id;
-        this.userServices.resetPassword(this.editPassword.value, id).subscribe(response => {
-
-          if (response[0].changedRows) {
-            alert('Tu contraseña ha sido actualizada correctamente')
-          } else {
-            alert('La contraseña no ha podido ser actualizada')
-          }
-        })
+        alert('Error al editar contraseña')
       }
+
     })
   }
+
 }
+
+
+

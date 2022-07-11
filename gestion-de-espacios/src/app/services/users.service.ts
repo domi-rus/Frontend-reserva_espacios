@@ -59,13 +59,14 @@ export class UsersService {
 
   // Resetear contraseña solo autorizados
 
-  resetPassword(pForm: any, pId: number): Observable<any> {
+  resetPassword(pForm: any): Observable<any> {
     const httpOptions = {
       headers: new HttpHeaders({
-        'Authorization': localStorage.getItem('token')!
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${localStorage.getItem('token')!}`,
       })
     }
-    const res = this.httpClient.put<any>(this.baseUrl + 'resetPassword/' + pId, pForm, httpOptions)
+    const res = this.httpClient.post<any>(this.baseUrl + 'ResetPassword', pForm, httpOptions)
     return res
   }
 
@@ -78,7 +79,7 @@ export class UsersService {
         "Authorization": `Bearer ${localStorage.getItem('token')!}`,
       })
     }
-    console.log(pId)
+
     return lastValueFrom(this.httpClient.put<any>(this.baseUrl + 'Edit/' + pId, pForm, httpOptions))
   }
 
