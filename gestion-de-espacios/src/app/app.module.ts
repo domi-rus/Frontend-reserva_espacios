@@ -33,6 +33,8 @@ import { EditProfileComponent } from './components/profile/edit-profile/edit-pro
 import { ConfSpaceComponent } from './components/workspace/conf-space/conf-space.component';
 import { FilterMembersPipe } from './pipes/filter.members.pipe';
 import { MeetingComponent } from './components/calendar/meeting/meeting.component';
+import { DeletreserveComponent } from './components/profile/deletreserve/deletreserve.component';
+import { DeleteMeetingComponent } from './components/profile/delete-meeting/delete-meeting.component';
 
 
 @NgModule({
@@ -55,7 +57,9 @@ import { MeetingComponent } from './components/calendar/meeting/meeting.componen
     ConfSpaceComponent,
     FilterMembersPipe,
     FilterMembersPipe,
-    MeetingComponent
+    MeetingComponent,
+    DeletreserveComponent,
+    DeleteMeetingComponent
 
   ],
   imports: [

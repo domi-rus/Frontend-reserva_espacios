@@ -4,11 +4,11 @@ import { Meeting } from 'src/app/interfaces/meeting';
 import { ReservesService } from 'src/app/services/reserves.service';
 
 @Component({
-  selector: 'app-meeting',
-  templateUrl: './meeting.component.html',
-  styleUrls: ['./meeting.component.scss']
+  selector: 'app-delete-meeting',
+  templateUrl: './delete-meeting.component.html',
+  styleUrls: ['./delete-meeting.component.scss']
 })
-export class MeetingComponent implements OnInit {
+export class DeleteMeetingComponent implements OnInit {
 
   @Input() miMeeting: Meeting | any
 
@@ -25,5 +25,9 @@ export class MeetingComponent implements OnInit {
     this.meetingFiltered = [...this.meetings]
   }
 
+  async onDelete(pId: number) {
 
+    this.meetingFiltered = await this.reservesService.deleteMeeting(pId);
+    this.router.navigate(['/calendar']);
+  }
 }
