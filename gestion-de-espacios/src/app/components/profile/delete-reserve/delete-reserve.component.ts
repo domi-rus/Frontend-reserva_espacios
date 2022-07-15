@@ -4,16 +4,17 @@ import { Reserve } from 'src/app/interfaces/reserve';
 import { ReservesService } from 'src/app/services/reserves.service';
 
 @Component({
-  selector: 'app-deletreserve',
-  templateUrl: './deletreserve.component.html',
-  styleUrls: ['./deletreserve.component.scss']
+  selector: 'app-delete-reserve',
+  templateUrl: './delete-reserve.component.html',
+  styleUrls: ['./delete-reserve.component.scss']
 })
-export class DeletreserveComponent implements OnInit {
-  @Input() miReserve: Reserve | any
 
+export class DeleteReserveComponent implements OnInit {
+
+
+  @Input() myReserve: Reserve | any
   reserved: Reserve[] | any
   reserveFiltered: Reserve[] = []
-
 
   constructor(private reservesService: ReservesService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
@@ -21,9 +22,6 @@ export class DeletreserveComponent implements OnInit {
 
     this.reserved = await this.reservesService.getAllReserves()
     this.reserveFiltered = [...this.reserved]
-
-
-
   }
 
   async onDelete(pId: number) {

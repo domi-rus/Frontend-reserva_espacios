@@ -8,7 +8,6 @@ import { provideAuth, getAuth } from '@angular/fire/auth';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
-import { JwtModule } from "@auth0/angular-jwt";
 // Directives
 
 import { AdminDirective } from './directives/admin.directive';
@@ -31,10 +30,10 @@ import { SpaceComponent } from './components/workspace/space/space.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { EditProfileComponent } from './components/profile/edit-profile/edit-profile.component';
 import { ConfSpaceComponent } from './components/workspace/conf-space/conf-space.component';
-import { FilterMembersPipe } from './pipes/filter.members.pipe';
-import { MeetingComponent } from './components/calendar/meeting/meeting.component';
-import { DeletreserveComponent } from './components/profile/deletreserve/deletreserve.component';
+import { DeleteReserveComponent } from './components/profile/delete-reserve/delete-reserve.component';
 import { DeleteMeetingComponent } from './components/profile/delete-meeting/delete-meeting.component';
+import { ReserveConferenceComponent } from './components/calendar/reserve-conference/reserve-conference.component';
+import { FlatviewComponent } from './components/calendar/flatview/flatview.component';
 
 
 @NgModule({
@@ -55,11 +54,10 @@ import { DeleteMeetingComponent } from './components/profile/delete-meeting/dele
     NotFoundComponent,
     EditProfileComponent,
     ConfSpaceComponent,
-    FilterMembersPipe,
-    FilterMembersPipe,
-    MeetingComponent,
-    DeletreserveComponent,
-    DeleteMeetingComponent
+    DeleteReserveComponent,
+    DeleteMeetingComponent,
+    ReserveConferenceComponent,
+    FlatviewComponent
 
   ],
   imports: [

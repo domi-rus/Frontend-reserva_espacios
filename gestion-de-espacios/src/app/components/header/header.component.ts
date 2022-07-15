@@ -8,6 +8,7 @@ import { UsersService } from 'src/app/services/users.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
+
 export class HeaderComponent {
 
   isLogged: boolean = false
@@ -15,14 +16,11 @@ export class HeaderComponent {
   logged: any
   user: User | any
 
-  constructor(private usersServices: UsersService, private router: Router) {
-
-  }
+  constructor(private usersServices: UsersService, private router: Router) { }
 
   async ngOnInit() {
     this.logged = await this.usersServices.myUser()
     this.username = this.logged.username
-
   }
 
   async OnSubmit() {
@@ -33,22 +31,14 @@ export class HeaderComponent {
     } catch (err) {
       console.log(err)
     }
-
   }
-
-
 
   ngDoCheck(): void {
     this.isLogged = (localStorage.getItem('token') !== null) ? true : false
-
   }
+
   logout() {
     localStorage.removeItem('token')
     this.router.navigateByUrl('/login')
   }
-
-
-
-
-
 }

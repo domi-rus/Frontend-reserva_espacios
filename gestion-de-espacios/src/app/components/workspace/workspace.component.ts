@@ -11,5 +11,4 @@ export class WorkspaceComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

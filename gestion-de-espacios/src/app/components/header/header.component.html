@@ -10,87 +10,70 @@
               </a>
             </li>
             <li class="item__StyledSocialItem">
-              <a href="https://www.facebook.com/BraventIT/?fref=ts" target="_blank">
-                <i class="fa-brands fa-facebook" title="Facebook"></i>
+              <a href="https://www.facebook.com/BraventIT/?fref=ts" target="_blank"><i class="fa-brands fa-facebook"
+                  title="Facebook"></i>
               </a>
             </li>
             <li class="item__StyledSocialItem">
-              <a href="https://www.meetup.com/es-ES/Bravent/" target="_blank">
-                <i class="fa-brands fa-meetup" title="Meetup"></i>
+              <a href="https://www.meetup.com/es-ES/Bravent/" target="_blank"><i class="fa-brands fa-meetup"
+                  title="Meetup"></i>
               </a>
             </li>
             <li class="item__StyledSocialItem">
-              <a href="https://www.youtube.com/channel/UCL8m9TtTjTo_MIF9pj0XR4A" target="_blank">
-                <i class="fa-brands fa-youtube" title="Youtube"></i>
+              <a href="https://www.youtube.com/channel/UCL8m9TtTjTo_MIF9pj0XR4A" target="_blank"><i
+                  class="fa-brands fa-youtube" title="Youtube"></i>
               </a>
             </li>
             <li class="item__StyledSocialItem">
-              <a href="https://www.linkedin.com/company/bravent?trk=top_nav_home" target="_blank">
-                <i class="fa-brands fa-linkedin" title="LinkedIn"></i>
+              <a href="https://www.linkedin.com/company/bravent?trk=top_nav_home" target="_blank"><i
+                  class="fa-brands fa-linkedin" title="LinkedIn"></i>
               </a>
             </li>
             <li class="item__StyledSocialItem">
-              <a href="https://www.instagram.com/bravent_it/" target="_blank">
-                <i class="fa-brands fa-instagram" title="Instagram"></i>
+              <a href="https://www.instagram.com/bravent_it/" target="_blank"><i class="fa-brands fa-instagram"
+                  title="Instagram"></i></a>
+            </li>
+            <li class="item__StyledSocialItem">
+              <a href="https://discord.com/channels/966667383219564544/966669568900755476" target="_blank"><i
+                  class="fa-brands fa-discord" title="Discord"></i>
               </a>
             </li>
             <li class="item__StyledSocialItem">
-              <a href="https://discord.com/channels/966667383219564544/966669568900755476" target="_blank">
-                <i class="fa-brands fa-discord" title="Discord"></i>
-              </a>
-            </li>
-            <li class="item__StyledSocialItem">
-              <a href="https://www.twitch.tv/bravent_it" target="_blank">
-                <i class="fa-brands fa-twitch" title="Twitch"></i>
+              <a href="https://www.twitch.tv/bravent_it" target="_blank"><i class="fa-brands fa-twitch"
+                  title="Twitch"></i>
               </a>
             </li>
           </ul>
         </div>
       </div>
     </div>
-
     <!-- Navbar principal -->
-
     <div class="inner">
       <div class="inner__StyledInnerNav">
         <div class="container__StyledContainer">
-
           <!-- Logo -->
-
           <div class="logo__StyledLogo">
-            <a [routerLink]="['/home']">
-              <img title="Home" class="img__StyledImage" src="./assets/logo/Recurso 5@2x.png" alt="">
-            </a>
+            <a [routerLink]="['/home']"><img title="Home" class="img__StyledImage" src="./assets/logo/Recurso 5@2x.png"
+                alt=""></a>
           </div>
-
           <!-- Menu -->
-
           <div class="menu__StyledMainMenu">
             <nav class="main__StyledMainNav">
               <ul class="menu__StyledBraventMenu" role="list">
+                <li class="item__StyledMenuItem remove-item">
+                  <a class="link__StyledMenuLink" routerLink="/home" routerLinkActive="active"
+                    title=" Realiza una reserva">INICIO</a>
+                </li>
                 <li class="item__StyledMenuItem">
                   <a class="link__StyledMenuLink" routerLink="/workspace" routerLinkActive="active"
                     title=" Realiza una reserva">RESERVAS</a>
                 </li>
-
                 <div class="logged">
                   <li class="item__StyledMenuItem">
                     <a class="link__StyledMenuLink" routerLink='/calendar' routerLinkActive="active"
                       title="Accede a tu perfil">CONSULTAS</a>
                   </li>
                 </div>
-
-                <!-- BORRAR -->
-
-                <!-- <div class="logged">
-                    <li class="item__StyledMenuItem">
-                      <a class="link__StyledMenuLink" routerLink='/profile/:idprofile' routerLinkActive="active"
-                        title="Accede a tu perfil">MI PERFIL</a>
-                    </li>
-                  </div> -->
-
-
-
                 <div *ngIf="isLogged" class="logged">
                   <li class="item__StyledMenuItem">
                     <a class="link__StyledMenuLink" routerLink='/profile' routerLinkActive="active"
@@ -99,15 +82,14 @@
                 </div>
                 <div *ngIf="isLogged" class="logged">
                   <li class="item__StyledMenuItem">
-
-                    <button (click)="logout()"><i class="fa-solid fa-arrow-right-from-bracket"
-                        title="Logout"></i></button>
+                    <a class="link__StyledMenuLink " (click)="logout()"><i class="fa-solid fa-arrow-right-from-bracket"
+                        title="Logout"></i></a>
                   </li>
                 </div>
                 <div *ngIf="!isLogged" class="logged">
                   <li class="item__StyledMenuItem">
-                    <a class="link__StyledMenuLink " title="Login" routerLink='/login' routerLinkActive="active"><i
-                        class="fa-solid fa-arrow-right-to-bracket"></i></a>
+                    <a class="link__StyledMenuLink " title="Login" routerLink='/login' routerLinkActive="active">
+                      <i class="fa-solid fa-arrow-right-to-bracket"></i></a>
                   </li>
                 </div>
               </ul>

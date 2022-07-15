@@ -54,13 +54,13 @@ span {
 
 .fa-handshake {
   color: var.$green;
-  font-size: clamp(8.5rem, 9.5rem, 9.5rem);
+  font-size: clamp(3.5rem, 6.5rem, 7.5rem);
   cursor: pointer;
 }
 
 input:checked+label .fa-handshake {
   transition: .3s;
-  font-size: 130px;
+  font-size: 150px;
   color: var.$dark-blue;
 }
 
@@ -268,7 +268,21 @@ button {
 
   100% {
     opacity: 1;
-    // padding: 20px 40px;
+    padding: 20px 40px;
     width: 0px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .container__StyledMainContainer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .left__StyledSpacesLeftSection {
+    margin-left: 0px;
+    margin-bottom: 30px;
   }
 }

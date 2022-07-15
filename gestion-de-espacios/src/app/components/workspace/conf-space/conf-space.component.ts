@@ -9,13 +9,12 @@ import { ReservesService } from 'src/app/services/reserves.service';
   templateUrl: './conf-space.component.html',
   styleUrls: ['./conf-space.component.scss']
 })
+
 export class ConfSpaceComponent implements OnInit {
 
 
   formReserveConf: FormGroup
-
   meeting: Meeting[] = []
-
 
   constructor(private router: Router, private reserveService: ReservesService) {
 
@@ -32,19 +31,14 @@ export class ConfSpaceComponent implements OnInit {
 
       ]),
     })
-
   }
 
   ngOnInit(): void {
+
   }
 
   async onSubmit() {
 
-
-
-    // this.formReserveConf.value.startHour = moment(this.formReserveConf.value.startHour).format('YYYY-MM-DD HH:mm:ss')
-    // this.formReserveConf.value.endHour = moment(this.formReserveConf.value.endHour).format('YYYY-MM-DD HH:mm:ss')
-    console.log(this.formReserveConf)
     this.reserveService.createMeeting(this.formReserveConf.value).subscribe(async res => {
 
       if (res.id) {
@@ -57,5 +51,4 @@ export class ConfSpaceComponent implements OnInit {
       }
     })
   }
-
 }

@@ -1,71 +1,59 @@
-<!-- <div *ngIf="user !==undefined"> -->
 
-<div class="container__StyledProfileAndReservesMainContainer">
-  <section id="profile" class="left__StyledProfileLeftSection">
-    <div class="main__StyledProfileMain">
-      <div title="Mi perfil" class="text__StyledTextProfile">
-        <p>Mi perfil</p>
-      </div>
-      <div class="form__StyledProfileForm">
-        <div class="form__StyledFormUser">
-
-          <div class="courses-container">
-            <div class="course">
-              <div class="course-preview">
-                <div class="img">
-                  <img class="profile-img"
-                    [src]="user.avatar ? imgPath + user.avatar :'../../../assets/images/default-avatar.png'">
+  <div class="container__StyledProfileAndReservesMainContainer">
+    <section id="profile" class="left__StyledProfileLeftSection">
+      <div class="main__StyledProfileMain">
+        <div title="Mi perfil" class="text__StyledTextProfile">
+          <p>Mi perfil</p>
+        </div>
+        <div class="form__StyledProfileForm">
+          <div class="form__StyledFormUser">
+            <div class="courses-container">
+              <div class="course">
+                <div class="course-preview">
+                  <div class="img">
+                    <img class="profile-img"
+                      [src]="user.avatar ? imgPath + user.avatar :'../../../assets/images/default-avatar.png'">
+                  </div>
                 </div>
-              </div>
-              <div class="course-info">
-                <div class="progress-container">
+                <div class="course-info">
+                  <div class="progress-container">
+                  </div>
+                  <h2><span>Nombre:</span> {{ user.name }} {{ user.surname }}</h2>
+                  <h2><span>Email:</span> {{ user.email }}</h2>
+                  <h2><span>Username:</span> {{ user.userName }}</h2>
+                  <!-- Editar contraseña -->
+                  <button class="pass-btn" title="Elige una nueva contraseña" type="button" data-bs-toggle="modal"
+                    data-bs-target="#editPassword"><i class="fa-solid fa-key password"></i></button>
+                  <app-password [myProfile]="user"></app-password>
+                  <!-- Editar usuario -->
+                  <button type="button" title="Editar perfil" class="profile___btn btn my-2" data-bs-toggle="modal"
+                    data-bs-target="#editProfile"><i class="fa-solid fa-user-pen"></i></button>
+                  <app-edit-profile [myUser]="user"></app-edit-profile>
                 </div>
-                <h2><span>Nombre:</span> {{ user.name }} {{ user.surname }}</h2>
-                <h2><span>Email:</span> {{ user.email }}</h2>
-                <h2><span>Username:</span> {{ user.userName }}</h2>
-
-
-                <!-- Editar contraseña -->
-
-                <button class="pass-btn" title="Elige una nueva contraseña" type="button" data-bs-toggle="modal"
-                  data-bs-target="#editPassword"><i class="fa-solid fa-key password"></i></button>
-                <app-password [myProfile]="user"></app-password>
-
-                <!-- Editar usuario -->
-
-                <button type="button" title="Editar perfil" class="profile___btn btn my-2" data-bs-toggle="modal"
-                  data-bs-target="#editProfile"><i class="fa-solid fa-user-pen"></i></button>
-                <app-edit-profile [myUser]="user"></app-edit-profile>
               </div>
             </div>
           </div>
         </div>
-        <!-- <div class="icon__logout">
-          <button (click)="logout()" *ngIf="router.url === '/profile'"><i class="fa-solid fa-arrow-right-from-bracket"
-              title="Logout"></i></button>
-        </div> -->
       </div>
-    </div>
-  </section>
-  <section class="right__StyledProfileRightSection">
-    <div id="reserves" class="main__StyledReservesMain">
-      <div title="Mis reservas" class="text__StyledTextReserves">
-        <p>Mis reservas</p>
-      </div>
-      <div class="cards__StyledReservesCards">
-        <div class="app__StyledReserveApp">
-          <div class="courses-container-back">
-            <article *ngFor="let reserve of reserveFiltered">
-              <app-deletreserve [miReserve]="reserve"></app-deletreserve>
-            </article>
-            <article *ngFor="let reserve of meetingFiltered">
-              <app-delete-meeting [miMeeting]="reserve"></app-delete-meeting>
-            </article>
+    </section>
+    <section class="right__StyledProfileRightSection">
+      <div id="reserves" class="main__StyledReservesMain">
+        <div title="Mis reservas" class="text__StyledTextReserves">
+          <p>Mis reservas</p>
+        </div>
+        <div class="cards__StyledReservesCards">
+          <div class="app__StyledReserveApp">
+            <div class="courses-container-back">
+              <article *ngFor="let reserve of reserveFiltered">
+                <app-delete-reserve [myReserve]="reserve"></app-delete-reserve>
+              </article>
+              <article *ngFor="let reserve of meetingFiltered">
+                <app-delete-meeting [myMeeting]="reserve"></app-delete-meeting>
+              </article>
+            </div>
+            <p></p>
           </div>
-          <p></p>
         </div>
       </div>
-    </div>
-  </section>
-</div>
-<!-- </div> -->
+    </section>
+  </div>

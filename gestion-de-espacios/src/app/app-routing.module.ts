@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CalendarComponent } from './components/calendar/calendar.component';
+import { FlatviewComponent } from './components/calendar/flatview/flatview.component';
 import { ReserveComponent } from './components/calendar/reserve/reserve.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
@@ -17,12 +18,12 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'workspace', component: WorkspaceComponent, canActivate: [LoginGuard] },
-  { path: 'profile', component: ProfileComponent, canActivate: [LoginGuard] },
-  { path: 'calendar', component: CalendarComponent, canActivate: [LoginGuard] },
-  { path: 'reserve', component: ReserveComponent, canActivate: [LoginGuard] },
-  { path: 'space', component: SpaceComponent, canActivate: [LoginGuard] },
-  { path: 'conference', component: ConfSpaceComponent, canActivate: [LoginGuard] },
+  { path: 'workspace', canActivate: [LoginGuard], component: WorkspaceComponent },
+  { path: 'profile', canActivate: [LoginGuard], component: ProfileComponent },
+  { path: 'calendar', canActivate: [LoginGuard], component: CalendarComponent },
+  { path: 'flatview', canActivate: [LoginGuard], component: FlatviewComponent },
+  { path: 'space', canActivate: [LoginGuard], component: SpaceComponent },
+  { path: 'conference', canActivate: [LoginGuard], component: ConfSpaceComponent },
   { path: "**", component: NotFoundComponent },
 
 ];

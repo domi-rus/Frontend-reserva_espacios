@@ -73,7 +73,6 @@ span {
   font-weight: 600;
 }
 
-
 .data-card {
   background-color: rgba(3, 3, 0, 0.5);
   display: flex;
@@ -197,9 +196,6 @@ span {
     transform: translateY(0);
   }
 }
-
-// Responsive
-
 
 @media (max-width: 600px) {
   .data-card {

@@ -13,7 +13,6 @@ export class FilterDocumentsPipe implements PipeTransform {
         resultFilter.push(filter);
       }
     }
-
     return resultFilter;
   }
 

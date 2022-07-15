@@ -2,27 +2,24 @@
   <div class="course">
     <div class="course-preview">
       <h6>Reserva </h6>
-      <h6>
-        <!-- {{ miReserve.id }} -->
-      </h6>
       <h2>
-        {{ miMeeting.user.name }}
+        {{ myMeeting.user.name }}
       </h2>
       <h2>
-        {{ miMeeting.user.surname }}
+        {{ myMeeting.user.surname }}
       </h2>
     </div>
     <div class="course-info">
       <div class="progress-container">
       </div>
       <h3><span>Fecha:</span>
-        {{ miMeeting.startHour | date: 'dd/MM HH:mm' }} hasta {{ miMeeting.endHour | date: 'HH:mm' }}
+        {{ myMeeting.startHour | date: 'dd/MM HH:mm' }} hasta {{ myMeeting.endHour | date: 'HH:mm' }}
       </h3>
       <h3><span>Sala:</span>
         Sala de reuniones
       </h3>
       <h3><span>Compañia:</span>
-        {{ miMeeting.user.company }}
+        {{ myMeeting.user.company }}
       </h3>
 
     </div>

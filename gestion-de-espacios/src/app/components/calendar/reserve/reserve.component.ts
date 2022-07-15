@@ -1,9 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Reserve } from 'src/app/interfaces/reserve';
-import { User } from 'src/app/interfaces/user';
 import { ReservesService } from 'src/app/services/reserves.service';
-import jwt_decode from 'jwt-decode';
+
 
 @Component({
   selector: 'app-reserve',
@@ -12,7 +11,7 @@ import jwt_decode from 'jwt-decode';
 })
 export class ReserveComponent implements OnInit {
 
-  @Input() miReserve: Reserve | any
+  @Input() myReserve: Reserve | any
 
   reserved: Reserve[] | any
   reserveFiltered: Reserve[] = []
@@ -23,15 +22,7 @@ export class ReserveComponent implements OnInit {
 
     this.reserved = await this.reservesService.getAllReserves()
     this.reserveFiltered = [...this.reserved]
-
-
-
   }
-
-
-
-
-  // Aqui me tengo que traer los metodos de mis reservas, editar etc....
 
 
 }

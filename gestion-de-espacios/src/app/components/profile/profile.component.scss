@@ -59,20 +59,6 @@ label {
   }
 }
 
-@keyframes move {
-  0% {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-240px);
-  }
-
-  100% {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
-}
-
 .course-container {
   display: flex;
   flex-direction: column;
@@ -237,4 +223,18 @@ i {
   font-size: 20px;
   color: var.$green;
   transition: all .1s;
+}
+
+@keyframes move {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-240px);
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
 }

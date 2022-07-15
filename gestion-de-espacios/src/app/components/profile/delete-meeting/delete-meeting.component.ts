@@ -8,12 +8,10 @@ import { ReservesService } from 'src/app/services/reserves.service';
   templateUrl: './delete-meeting.component.html',
   styleUrls: ['./delete-meeting.component.scss']
 })
+
 export class DeleteMeetingComponent implements OnInit {
 
-  @Input() miMeeting: Meeting | any
-
-
-
+  @Input() myMeeting: Meeting | any
   meetings: Meeting[] | any
   meetingFiltered: Meeting[] = []
 

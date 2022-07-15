@@ -44,8 +44,6 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('token', res.token)
         this.router.navigate(['/workspace'])
       }
-
     })
   }
 }
-

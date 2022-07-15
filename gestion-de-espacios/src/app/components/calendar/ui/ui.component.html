@@ -1,13 +1,5 @@
 
   <div class="main__StyledCalendarMain">
-
-    <!-- Get date -->
-    <!-- <div class="date__StyledGettedDate">
-      Fecha: {{ dateValue | date }}
-    </div> -->
-
-    <!-- Calendar -->
-
     <div class="wrapper-calendar">
       <div class="calendar__StyledCalendarHeader">
         <div>
@@ -18,9 +10,7 @@
           <button (click)="changeMonth(1)"><i class="fa-solid fa-arrow-right-long"></i></button>
         </div>
       </div>
-
       <!-- Day of week -->
-
       <ol role="list" class="week__StyledWeekCalendar">
         <li *ngFor="let day of week" class="day-name">{{ day | slice: 0: 3 }}</li>
 

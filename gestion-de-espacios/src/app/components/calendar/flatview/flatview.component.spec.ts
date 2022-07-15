@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DeletreserveComponent } from './deletreserve.component';
+import { FlatviewComponent } from './flatview.component';
 
-describe('DeletreserveComponent', () => {
-  let component: DeletreserveComponent;
-  let fixture: ComponentFixture<DeletreserveComponent>;
+describe('FlatviewComponent', () => {
+  let component: FlatviewComponent;
+  let fixture: ComponentFixture<FlatviewComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DeletreserveComponent ]
+      declarations: [ FlatviewComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DeletreserveComponent);
+    fixture = TestBed.createComponent(FlatviewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

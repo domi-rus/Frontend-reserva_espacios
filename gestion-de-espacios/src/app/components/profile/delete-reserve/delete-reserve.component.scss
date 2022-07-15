@@ -11,8 +11,6 @@
   padding-bottom: 3px;
 }
 
-
-
 .course h6 {
   text-transform: uppercase;
   font-family: var.$font-sans;
@@ -61,4 +59,16 @@ span {
   padding: 0px 10px 10px 10px;
   position: relative;
   width: 100%;
+}
+
+.delete {
+  color: rgba(255, 0, 0, 0.233);
+  font-size: var.$fz-xl;
+  cursor: pointer;
+  text-decoration: none;
+  margin-right: 30px;
+
+  &:hover {
+    color: red;
+  }
 }

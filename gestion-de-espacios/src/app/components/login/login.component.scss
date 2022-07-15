@@ -9,6 +9,7 @@
   display: flex;
   height: 87.3vh;
   font-family: 'Gelion';
+  width: 100%;
 }
 
 .left {
@@ -40,8 +41,6 @@
   border: none;
   background-color: white;
   cursor: pointer;
-
-
 }
 
 .fa-google {
@@ -141,7 +140,7 @@ input {
   font-weight: 600;
   background-color: var.$green;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 40px;
   border: none;
 
   &:hover,
@@ -158,27 +157,27 @@ input {
   animation-name: move;
   animation-duration: .4s;
   animation-fill-mode: both;
-  animation-delay: 2s;
+  animation-delay: 1s;
 }
 
 .a1 {
-  animation-delay: 2s;
+  animation-delay: 1s;
 }
 
 .a2 {
-  animation-delay: 2.1s;
+  animation-delay: 1.1s;
 }
 
 .a3 {
-  animation-delay: 2.2s;
+  animation-delay: 1.2s;
 }
 
 .a4 {
-  animation-delay: 2.3s;
+  animation-delay: 1.3s;
 }
 
 .a5 {
-  animation-delay: 2.4s;
+  animation-delay: 1.4s;
 }
 
 @keyframes move {
@@ -203,7 +202,8 @@ input {
 
   100% {
     opacity: 1;
-    padding: 20px 40px;
-    width: 440px;
+    padding: 30px 40px;
+    width: 50%;
+    transform: translateY(0);
   }
 }

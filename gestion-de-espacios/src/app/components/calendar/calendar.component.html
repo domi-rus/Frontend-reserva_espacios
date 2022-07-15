@@ -4,18 +4,21 @@
       <section id="profile" class="left__StyledProfileLeftSection">
         <div class="main__StyledProfileMain">
           <div title="Mi perfil" class="text__StyledTextProfile">
+
             <p>Histórico de reservas</p>
           </div>
           <div class="form__StyledProfileForm">
             <div class="form__StyledFormUser">
 
               <div class="courses-container">
+
                 <div class="course">
                   <article *ngFor="let reserve of reserveFiltered">
-                    <app-reserve [miReserve]="reserve" (refreshReserves)="actReserves()"></app-reserve>
+                    <app-reserve [myReserve]="reserve"></app-reserve>
                   </article>
-                  <article *ngFor="let reserve of meetingFiltered">
-                    <app-meeting [miMeeting]="reserve" (refreshReserves)="actMeetings()"></app-meeting>
+                  <article *ngFor="let meeting of meetingFiltered">
+                    <app-reserveConference [myMeeting]="meeting">
+                    </app-reserveConference>
                   </article>
                 </div>
               </div>
