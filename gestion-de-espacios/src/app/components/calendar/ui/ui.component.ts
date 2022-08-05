@@ -50,9 +50,11 @@ export class UiComponent implements OnInit {
     // Diferencia de dias entre la fecha inicial y la fecha final	(startDate - endDate)
     const diffDays = endDate.diff(startDate, 'days', true)
     const numberDays = Math.round(diffDays)
+
     const arrayDays = Object.keys([...Array(numberDays)]).map((a: any) => {
 
       a = parseInt(a) + 1
+
       // Date
       const dayObject = moment(`${year}-${month}-${a}`)
 
@@ -61,13 +63,16 @@ export class UiComponent implements OnInit {
         return justDay
       })
       return {
-        name: dayObject.format("dddd"),
+        name: dayObject.format("DD"),
         value: a,
         // Día de la semana
         indexWeek: dayObject.isoWeekday()
+
       }
     })
     this.monthSelect = arrayDays
+
+
   }
   // Cambiar el mes
   changeMonth(flag: any) {
@@ -81,14 +86,21 @@ export class UiComponent implements OnInit {
   }
 
   async clickDay(day: any) {
+
+
     const monthYear = this.dateSelect.format('YYYY-MM')
-    const parse = `${monthYear}-${day.value}`
+    const parse = `${monthYear}-${day.name}`
+
+
+
     const objectDate = moment(parse)
     this.dateValue = objectDate
     let date = this.dateValue._i
 
+
     if (date !== "") {
       this.SelectedDate.emit(date)
+
 
     }
   }

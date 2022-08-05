@@ -46,14 +46,14 @@ export class SpaceComponent implements OnInit {
     // se submitea el formulario y se guarda en la base de datos y se redirige a la pagina de reservas realizadas. Reseteamos el formulario para que no se quede en el mismo estado que antes de hacer el submit 
     this.formReserve.value.spaceId = parseInt(this.formReserve.value.spaceId)
     this.formReserve.value.date = this.date
-    console.log(this.formReserve.value)
+
 
     this.reservesService.createReserve(this.formReserve.value).subscribe(async res => {
 
       if (res.id) {
         this.formReserve.reset()
         this.reserveFiltered = await this.reservesService.getAllReserves()
-        this.router.navigate(['/calendar'])
+        this.router.navigate(['/profile'])
 
       } else {
         alert('Error al crear la reserva')
@@ -69,7 +69,7 @@ export class SpaceComponent implements OnInit {
 
     this.reserveFiltered = [...this.reserve]
     this.reserveFiltered = this.reserve.filter(x => x.date.substring(10, -1) == this.date)
-    console.log(this.reserveFiltered)
+
 
   }
 

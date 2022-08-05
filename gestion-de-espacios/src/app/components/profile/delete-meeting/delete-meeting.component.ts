@@ -26,6 +26,6 @@ export class DeleteMeetingComponent implements OnInit {
   async onDelete(pId: number) {
 
     this.meetingFiltered = await this.reservesService.deleteMeeting(pId);
-    this.router.navigate(['/calendar']);
+    this.router.navigate(['/conference']);
   }
 }

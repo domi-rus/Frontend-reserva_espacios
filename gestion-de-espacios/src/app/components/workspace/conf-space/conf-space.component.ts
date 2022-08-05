@@ -44,7 +44,7 @@ export class ConfSpaceComponent implements OnInit {
       if (res.id) {
         this.formReserveConf.reset()
         this.meeting = await this.reserveService.getAllMeetings()
-        this.router.navigate(['/calendar'])
+        this.router.navigate(['/profile'])
         console.log(res)
       } else {
         alert('Error al crear la reserva')

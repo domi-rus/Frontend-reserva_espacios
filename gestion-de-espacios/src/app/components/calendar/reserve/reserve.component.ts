@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import { Reserve } from 'src/app/interfaces/reserve';
 import { ReservesService } from 'src/app/services/reserves.service';
 
@@ -16,7 +15,7 @@ export class ReserveComponent implements OnInit {
   reserved: Reserve[] | any
   reserveFiltered: Reserve[] = []
 
-  constructor(private reservesService: ReservesService, private activatedRoute: ActivatedRoute, private router: Router) { }
+  constructor(private reservesService: ReservesService) { }
 
   async ngOnInit(): Promise<void> {
 

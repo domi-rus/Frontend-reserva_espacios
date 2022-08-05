@@ -1,5 +1,31 @@
 <form [formGroup]="formReserve" (ngSubmit)="onSubmit()">
   <div class="container__StyledMainContainer">
+    <section class="right__StyledFormRightSection">
+      <div class="date__StyledDateForm">
+        <div class="text__StyledText">
+          <p>Elige tus <span>opciones:</span></p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="right">
+          <div class="header">
+            <h4 class="animation a2">*Selecciona una fecha y completa los campos para formalizar la reserva.</h4>
+          </div>
+          <div class="form">
+            <input type="date" class="form-field animation a3" (change)="OnDate($event)">
+            <input maxlength="150" type="text" name="description" class="form-field animation a3"
+              placeholder="*Descripción de la reserva (max.150)" formControlName="description">
+            <input type="submit" class="resume-button" value="ACEPTAR">
+
+          </div>
+          <div class="courses-container-back">
+            <article *ngFor="let reserve of reserveFiltered">
+              <app-flatview [myReserve]="reserve"></app-flatview>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="left__StyledSpacesLeftSection">
       <div class="grid__StyledGridSpaces">
         <div class="text__StyledText">
@@ -7,19 +33,6 @@
         </div>
         <div class="separador-salareuniones">
           <div class="text remove__StyledRemoveItem space">
-            <p>Espacio Ceres</p>
-            <div class="separador-sala-2">
-              <div>
-                <input id="checkbox-12" class="checkbox" value="18" formControlName="spaceId" name="spaceId"
-                  type="radio">
-                <label for="checkbox-12"><i class="fa-solid fa-computer"></i>Puesto 18</label>
-              </div>
-              <div>
-                <input id="checkbox-13" class="checkbox" value="19" formControlName="spaceId" name="spaceId"
-                  type="radio">
-                <label for="checkbox-13"><i class="fa-solid fa-computer"></i>Puesto 19</label>
-              </div>
-            </div>
           </div>
           <div class="text">
             <p>Espacio central Ultrón</p>
@@ -102,12 +115,12 @@
               <div>
                 <input id="checkbox-12" class="checkbox" value="18" formControlName="spaceId" name="spaceId"
                   type="radio">
-                <label for="checkbox-12"><i class="fa-solid fa-computer"></i>Puesto 18</label>
+                <label for="checkbox-12"><i class="fa-solid fa-computer"></i> Puesto 18</label>
               </div>
               <div>
                 <input id="checkbox-13" class="checkbox" value="19" formControlName="spaceId" name="spaceId"
                   type="radio">
-                <label for="checkbox-13"><i class="fa-solid fa-computer"></i>Puesto 19</label>
+                <label for="checkbox-13"><i class="fa-solid fa-computer"></i> Puesto 19</label>
               </div>
             </div>
           </div>
@@ -119,7 +132,7 @@
                   <div>
                     <input id="checkbox-14" class="checkbox" value="5" formControlName="spaceId" name="spaceId"
                       type="radio">
-                    <label for="checkbox-14"><i class="fa-solid fa-computer"></i>Puesto 5</label>
+                    <label for="checkbox-14"><i class="fa-solid fa-computer"></i> Puesto 5</label>
                   </div>
                 </div>
                 <div class="espacio-4">
@@ -180,29 +193,6 @@
         </div>
       </div>
     </section>
-    <section class="right__StyledFormRightSection">
-      <div class="date__StyledDateForm">
-        <div class="text__StyledText">
-          <p>Elige tus <span>opciones:</span></p>
-        </div>
-      </div>
-      <div class="container">
-        <div class="right">
-          <div class="header">
-            <h4 class="animation a2">*Completa los campos para formalizar la reserva.</h4>
-          </div>
-          <div class="form">
-            <input type="date" class="form-field animation a3" (change)="OnDate($event)">
-            <input maxlength="150" type="text" name="description" class="form-field animation a3"
-              placeholder="*Descripción de la reserva (max.150)" formControlName="description">
-            <input type="submit" class="resume-button" value="ACEPTAR">
 
-          </div>
-          <article *ngFor="let reserve of reserveFiltered">
-            <app-flatview [myReserve]="reserve"></app-flatview>
-          </article>
-        </div>
-      </div>
-    </section>
   </div>
 </form>

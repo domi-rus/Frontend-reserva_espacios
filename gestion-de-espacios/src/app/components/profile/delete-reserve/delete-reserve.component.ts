@@ -27,6 +27,6 @@ export class DeleteReserveComponent implements OnInit {
   async onDelete(pId: number) {
 
     this.reserveFiltered = await this.reservesService.deleteReserve(pId);
-    this.router.navigate(['/calendar']);
+    this.router.navigate(['/space']);
   }
 }
